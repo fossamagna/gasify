@@ -1,0 +1,15 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "Example for gasify",
+  "main": "main.js",
+  "scripts": {
+    "build": "browserify main.js -p gasify -o Code.gs"
+  },
+  "author": "fossamagna",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "gasify": "file:.."
+  }
+}
