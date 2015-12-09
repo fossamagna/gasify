@@ -33,7 +33,7 @@ module.exports = function (b, opts) {
   });
 
   function invalidate(file) {
-    delete stubsCahce[file];
+    delete stubsCache[file];
   }
 
   function generateEntryPoint() {
