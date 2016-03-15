@@ -27,7 +27,7 @@ module.exports = function (b, opts) {
   });
 
   b.on('update', function (files) {
-    files.map(function (file) {
+    files.forEach(function (file) {
       invalidate(file);
     });
   });
