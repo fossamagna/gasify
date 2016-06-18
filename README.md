@@ -1,4 +1,4 @@
-# gasify
+# gasify [![Build Status](https://travis-ci.org/fossamagna/gasify.svg?branch=master)](https://travis-ci.org/fossamagna/gasify)
 
 [Browserify](http://browserify.org/) plugin for Google Apps Script.
 
