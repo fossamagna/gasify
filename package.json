@@ -4,7 +4,7 @@
   "description": "Browserify Plugin for Google Apps Script",
   "main": "index.js",
   "scripts": {
-    "test": "xo index.js lib/*.js"
+    "test": "xo index.js lib/*.js && tap test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
+    "tap": "^5.7.2",
     "xo": "^0.13.0"
   },
   "xo": {
