@@ -1,4 +1,4 @@
-# gasify [![Build Status](https://travis-ci.org/fossamagna/gasify.svg?branch=master)](https://travis-ci.org/fossamagna/gasify) [![Coverage Status](https://coveralls.io/repos/github/fossamagna/gasify/badge.svg?branch=master)](https://coveralls.io/github/fossamagna/gasify?branch=master)
+# gasify [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 [Browserify](http://browserify.org/) plugin for Google Apps Script.
 
@@ -57,3 +57,8 @@ $ npm install gasify
 ```sh
 $ browserify main.js -p gasify -o Code.gs
 ```
+
+[travis-image]: https://travis-ci.org/fossamagna/gasify.svg?branch=master
+[travis-url]: https://travis-ci.org/fossamagna/gasify
+[coveralls-image]: https://coveralls.io/repos/github/fossamagna/gasify/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/fossamagna/gasify?branch=master
