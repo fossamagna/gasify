@@ -4,7 +4,8 @@
   "description": "Browserify Plugin for Google Apps Script",
   "main": "index.js",
   "scripts": {
-    "test": "xo index.js lib/*.js && tap test/*.test.js"
+    "test": "xo index.js lib/*.js && nyc tap test/*.test.js",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "repository": {
     "type": "git",
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "browserify": "^13.0.0",
+    "coveralls": "^2.11.9",
+    "nyc": "^6.6.1",
     "tap": "^5.7.2",
     "xo": "^0.16.0"
   },
