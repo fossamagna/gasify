@@ -31,7 +31,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "coveralls": "^2.11.9",
-    "nyc": "^6.6.1",
+    "nyc": "^7.0.0",
     "tap": "^6.0.0",
     "xo": "^0.16.0"
   },
