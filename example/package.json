@@ -9,7 +9,7 @@
   "author": "fossamagna",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^12.0.1",
+    "browserify": "^13.1.0",
     "gasify": "file:.."
   }
 }
