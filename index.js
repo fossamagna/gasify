@@ -1,5 +1,5 @@
 var through = require('through2');
-var stubs = require('./lib/stubs');
+var gasEntryGenerator = require('gas-entry-generator');
 
 module.exports = function (b, opts) {
   var cache = {};
@@ -42,7 +42,7 @@ module.exports = function (b, opts) {
       if ({}.hasOwnProperty.call(cache, file)) {
         var stub = stubsCache[file];
         if (!stub) {
-          stub = stubs.generateStubs(cache[file].source);
+          stub = gasEntryGenerator(cache[file].source);
           stubsCache[file] = stub;
         }
         entrypoints += stub;
