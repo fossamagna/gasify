@@ -1,9 +1,9 @@
-var through = require('through2');
-var gasEntryGenerator = require('gas-entry-generator');
+const through = require('through2');
+const gasEntryGenerator = require('gas-entry-generator');
 
 module.exports = function (b, opts) {
-  var cache = {};
-  var stubsCache = {};
+  let cache = {};
+  const stubsCache = {};
 
   b.on('reset', collect);
   collect();
@@ -11,7 +11,7 @@ module.exports = function (b, opts) {
   function collect() {
     cache = {};
     b.pipeline.get('deps').push(through.obj(function (row, enc, next) {
-      var file = row.expose ? b._expose[row.id] : row.file;
+      const file = row.expose ? b._expose[row.id] : row.file;
       cache[file] = {
         source: row.source
       };
@@ -20,14 +20,14 @@ module.exports = function (b, opts) {
     }));
   }
 
-  b.on('transform', function (tr, mfile) {
-    tr.on('file', function (dep) {
+  b.on('transform', (tr, mfile) => {
+    tr.on('file', dep => {
       invalidate(mfile);
     });
   });
 
-  b.on('update', function (files) {
-    files.forEach(function (file) {
+  b.on('update', files => {
+    files.forEach(file => {
       invalidate(file);
     });
   });
@@ -37,10 +37,10 @@ module.exports = function (b, opts) {
   }
 
   function generateEntryPoint() {
-    var entrypoints = '';
-    for (var file in cache) {
+    let entrypoints = '';
+    for (const file in cache) {
       if ({}.hasOwnProperty.call(cache, file)) {
-        var stub = stubsCache[file];
+        let stub = stubsCache[file];
         if (!stub) {
           stub = gasEntryGenerator(cache[file].source);
           stubsCache[file] = stub;
@@ -51,11 +51,11 @@ module.exports = function (b, opts) {
     return 'var global = this;' + entrypoints;
   }
 
-  var createStream = function () {
-    var firstChunk = true;
-    var stream = through.obj(function (buf, enc, next) {
+  const createStream = function () {
+    let firstChunk = true;
+    const stream = through.obj(function (buf, enc, next) {
       if (firstChunk) {
-        this.push(new Buffer(generateEntryPoint()));
+        this.push(Buffer.from(generateEntryPoint()));
         firstChunk = false;
       }
       this.push(buf);
@@ -71,7 +71,7 @@ module.exports = function (b, opts) {
 
   setupPipeline();
 
-  b.on('reset', function () {
+  b.on('reset', () => {
     setupPipeline();
   });
 };
