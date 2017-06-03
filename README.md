@@ -1,4 +1,4 @@
-# gasify [![NPM version][npm-image]][npm-url]  [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]  [![Coverage percentage][coveralls-image]][coveralls-url]
+# gasify [![NPM version][npm-image]][npm-url]  [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]  [![Coverage percentage][coveralls-image]][coveralls-url] [![Greenkeeper badge](https://badges.greenkeeper.io/fossamagna/gasify.svg)](https://greenkeeper.io/)
 
 [Browserify](http://browserify.org/) plugin for Google Apps Script.
 
