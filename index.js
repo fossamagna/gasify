@@ -12,7 +12,7 @@ module.exports = function (b, opts) {
 
   function collect() {
     cache = {};
-    b.pipeline.get('labels').push(through.obj(function (row, enc, next) {
+    b.pipeline.get('label').push(through.obj(function (row, enc, next) {
       const file = row.expose ? b._expose[row.id] : row.file;
       cache[file] = {
         source: row.source
