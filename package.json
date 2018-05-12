@@ -27,7 +27,7 @@
     "through2": "^2.0.0"
   },
   "devDependencies": {
-    "browserify": "^16.0.0",
+    "browserify": "^16.2.1",
     "coveralls": "^3.0.0",
     "nyc": "^11.7.3",
     "tap": "^11.1.5",
