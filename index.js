@@ -6,6 +6,7 @@ const gasEntryGenerator = require('gas-entry-generator');
 module.exports = function (b, opts) {
   let cache = {};
   const stubsCache = {};
+  opts = Object.assign({comment: true}, opts);
 
   b.on('reset', collect);
   collect();
@@ -44,13 +45,13 @@ module.exports = function (b, opts) {
       if ({}.hasOwnProperty.call(cache, file)) {
         let stub = stubsCache[file];
         if (!stub) {
-          stub = gasEntryGenerator(cache[file].source);
+          stub = gasEntryGenerator(cache[file].source, opts);
           stubsCache[file] = stub;
         }
         entrypoints += stub;
       }
     }
-    return 'var global = this;' + entrypoints;
+    return 'var global = this;\n' + entrypoints;
   }
 
   const createStream = function () {

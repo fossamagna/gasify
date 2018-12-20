@@ -8,7 +8,7 @@ test('bundle-gasify', function(t) {
 
   var expected = fs.readFileSync(__dirname + '/fixtures/expected.js', {encoding: 'utf8'});
   browserify(__dirname + '/fixtures/main.js')
-    .plugin(gasify)
+    .plugin(gasify, { comment: true })
     .bundle(function(err, buf) {
       t.error(err, 'build failed');
       t.ok(buf);

@@ -58,6 +58,12 @@ $ npm install gasify
 $ browserify main.js -p gasify -o Code.gs
 ```
 
+### Options
+
+The following options can be set via the API or command-line:
+
+`comment` {Boolean}: If `true` then generate a top level function declaration statement with comment. Default is `true`.
+
 [npm-image]: https://badge.fury.io/js/gasify.svg
 [npm-url]: https://npmjs.org/package/gasify
 [travis-image]: https://travis-ci.org/fossamagna/gasify.svg?branch=master
