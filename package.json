@@ -29,7 +29,7 @@
   "devDependencies": {
     "browserify": "^16.2.1",
     "coveralls": "^3.0.1",
-    "nyc": "^14.0.0",
+    "nyc": "^14.1.0",
     "tap": "^13.0.3",
     "xo": "^0.24.0"
   },
