@@ -3,10 +3,10 @@
 const through = require('through2');
 const gasEntryGenerator = require('gas-entry-generator');
 
-module.exports = function (b, opts) {
+module.exports = function (b, options) {
   let cache = {};
   const stubsCache = {};
-  opts = Object.assign({comment: true}, opts);
+  options = Object.assign({comment: true}, options);
 
   b.on('reset', collect);
   collect();
@@ -45,7 +45,7 @@ module.exports = function (b, opts) {
       if ({}.hasOwnProperty.call(cache, file)) {
         let stub = stubsCache[file];
         if (!stub) {
-          stub = gasEntryGenerator(cache[file].source, opts);
+          stub = gasEntryGenerator(cache[file].source, options);
           stubsCache[file] = stub;
         }
 
