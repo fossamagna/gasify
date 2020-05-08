@@ -48,9 +48,11 @@ module.exports = function (b, opts) {
           stub = gasEntryGenerator(cache[file].source, opts);
           stubsCache[file] = stub;
         }
+
         entrypoints += stub;
       }
     }
+
     return 'var global = this;\n' + entrypoints;
   }
 
@@ -61,6 +63,7 @@ module.exports = function (b, opts) {
         this.push(Buffer.from(generateEntryPoint()));
         firstChunk = false;
       }
+
       this.push(buf);
       next();
     });
