@@ -1,6 +1,6 @@
 {
   "name": "gasify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Browserify Plugin for Google Apps Script",
   "main": "index.js",
   "scripts": {
