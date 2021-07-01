@@ -6,13 +6,3 @@ updates:
     interval: daily
     time: "20:00"
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: tap
-    versions:
-    - 14.11.0
-    - 15.0.4
-  - dependency-name: xo
-    versions:
-    - 0.37.1
-    - 0.38.1
-    - 0.38.2
