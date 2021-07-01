@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/fossamagna/gasify#readme",
   "dependencies": {
-    "gas-entry-generator": "1.1.2",
+    "gas-entry-generator": "2.1.0",
     "through2": "^4.0.2"
   },
   "devDependencies": {
